@@ -1,0 +1,151 @@
+/* Google fonts */
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+#logo{
+    /*The logo image in the header fades in over 3 seconds*/
+    animation: fadeIn 5s;
+    width: 475px;
+}
+
+/* Fade Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        width: 30px;
+    }
+    to {
+        opacity: 1;
+        width: 475px;
+    }
+}
+
+/*Font Setting*/
+body{
+    font-family: "Poppins", sans-serif;
+    background-image: url("./images/concrete_seamless.png");
+    background-color: #f1f1f1;
+}
+
+/*Header Section*/
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+/* Navigation Section*/
+.nav_links {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+/* Link with same color after visited */
+a:link a:visited {
+    color: blue
+}
+
+.card > header {
+    background-color: #288088;
+    border: 2px solid #45adad;
+    padding: 20px 0;
+    border-radius: 50px 50px 0 0;
+}
+
+.card {
+    flex-basis: 450px;
+    border-radius: 50px 50px 0 0;
+}
+
+/* Pricing Section*/
+.pricing {
+    display: flex;
+    justify-content: center;
+    flex-shrink: 0;
+    align-items: center;
+}
+
+/* Gallery Section*/
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.gallery > img {
+    border: solid 10px #50c7c7;
+    margin: 10px;
+    width: 300px;
+}
+
+/* Desktop View*/
+@media screen and (min-width: 900px){
+
+    header {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .nav_links {
+        flex-direction: row;
+    }
+
+    .card {
+        flex-basis: 275px;
+    }
+
+    .pricing {
+        flex-wrap: nowrap;
+    }
+
+    body > header {
+        position: sticky;
+        top: 0;
+    }
+}
+
+/*If the user has set prefers reduced motion, the animation should not run*/
+@media (prefers-reduced-motion) {
+    #logo {
+        animation: none;
+    }
+}
+
+/* Set up print view */
+@media print {
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        background-image: none;
+    }
+
+    nav {
+        width: 100%;
+    }
+
+    .nav_links {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    
+    .pricing {
+        align-items: flex-end;
+        flex-direction: row;
+    }
+
+    .card{
+        border: 2px solid #45ADAD;
+        flex-basis: 325px
+    }
+    
+    .gallery, #gallery {
+        display: none;
+    }
+
+    .card > ul > li:nth-child(2):after {
+        content: "\1F44D";
+        color: #ffd700;
+    }
+}
