@@ -11,7 +11,7 @@
 @keyframes fadeIn {
     from {
         opacity: 0;
-        width: 30px;
+        width: 25px;
     }
     to {
         opacity: 1;
@@ -21,7 +21,7 @@
 
 /*Font Setting*/
 body{
-    font-family: "Poppins", sans-serif;
+    font-family: "Poppins", serif;
     background-image: url("./images/concrete_seamless.png");
     background-color: #f1f1f1;
 }
@@ -40,10 +40,11 @@ header {
     display: flex;
     justify-content: center;
     flex-direction: column;
+    align-items: start;
 }
 
 /* Link with same color after visited */
-a:link a:visited {
+a:link, a:visited {
     color: blue
 }
 
@@ -108,7 +109,7 @@ a:link a:visited {
 }
 
 /*If the user has set prefers reduced motion, the animation should not run*/
-@media (prefers-reduced-motion) {
+@media (prefers-reduced-motion: reduce) {
     #logo {
         animation: none;
     }
@@ -117,7 +118,7 @@ a:link a:visited {
 /* Set up print view */
 @media print {
     body {
-        font-family: Arial, Helvetica, sans-serif;
+        font-family: Arial, Helvetica, serif;
         background-image: none;
     }
 
