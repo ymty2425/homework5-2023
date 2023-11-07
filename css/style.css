@@ -135,6 +135,7 @@ a:link, a:visited {
     .pricing {
         align-items: flex-end;
         flex-direction: row;
+        flex-wrap: nowrap;
     }
 
     .card{
